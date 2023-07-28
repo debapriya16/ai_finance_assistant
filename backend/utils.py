@@ -56,7 +56,7 @@ class Offer:
             return pension
 
 
-df, df1 = read_datasets('../../dataset/account-statement.csv', '../../dataset/Bank_Customer_Details.csv')
+df, df1 = read_datasets('../dataset/account-statement.csv', '../dataset/Bank_Customer_Details.csv')
 buckets = get_investment_categories(df)
 x = get_customer_details(df1, 4998365304)
 offer = Offer(x)
