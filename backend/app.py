@@ -14,7 +14,11 @@ def cust_offers(cust_id):
     df, df1 = read_datasets('../dataset/account-statement.csv', '../dataset/Bank_Customer_Details.csv')
     cust_details = get_customer_details(df1, int(cust_id))
     offer = Offer(cust_details)
-    scheme = offer.check_age_offers()
+    age_scheme = offer.check_age_offers()
+    preference_scheme = offer.check_customer_preferences()
+    scheme = {}
+    scheme.update(age_scheme)
+    scheme.update(preference_scheme)
     return jsonify(scheme)
 
 

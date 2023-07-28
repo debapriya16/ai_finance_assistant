@@ -19,12 +19,12 @@ Date,Day,Account_No,Type,Category,Debit Amount,Credit Amount,Closing Balance
 11-08-2018,Saturday,4998365304,Debit,Travel,577.5,0,154902.19
 11-08-2018,Saturday,4998365304,Debit,Travel,577.5,0,154324.69
 11-08-2018,Saturday,4998365304,Debit,Shopping,921,0,153403.69
-11-08-2018,Saturday,4998365304,Debit,Shopping,108,0,153295.69
+11-08-2018,Saturday,4998365304,Debit,Travel,108,0,153295.69
 11-08-2018,Saturday,4998365304,Debit,Shopping,853,0,152442.69
 11-08-2018,Saturday,4998365304,Debit,Shopping,397,0,152045.69
 11-08-2018,Saturday,4998365304,Debit,Entertainment,130,0,151915.69
 12-08-2018,Sunday,4998365304,Debit,Shopping,1375,0,150540.69
-12-08-2018,Sunday,4998365304,Debit,Shopping,1024,0,149516.69
+12-08-2018,Sunday,4998365304,Debit,Travel,1024,0,149516.69
 13-08-2018,Monday,4998365304,Debit,Shopping,50,0,149466.69
 13-08-2018,Monday,4998365304,Credit,Interest,0,20.29,149486.98
 14-08-2018,Tuesday,4998365304,Debit,Medical,1305,0,148181.98
@@ -55,7 +55,7 @@ Date,Day,Account_No,Type,Category,Debit Amount,Credit Amount,Closing Balance
 26-08-2018,Sunday,4998365304,None,None,0,0,38441.46
 27-08-2018,Monday,4998365304,Debit,Shopping,2949.49,0,35491.97
 28-08-2018,Tuesday,4998365304,None,None,0,0,35491.97
-29-08-2018,Wednesday,4998365304,Debit,Shopping,1380,0,34111.97
+29-08-2018,Wednesday,4998365304,Debit,Travel,1380,0,34111.97
 30-08-2018,Thursday,4998365304,Credit,Interest,0,22.12,34134.09
 30-08-2018,Thursday,4998365304,Debit,Shopping,3300,0,30834.09
 31-08-2018,Friday,4998365304,Debit,Travel,892.5,0,29941.59
@@ -72,7 +72,7 @@ Date,Day,Account_No,Type,Category,Debit Amount,Credit Amount,Closing Balance
 06-09-2018,Thursday,4998365304,Debit,Shopping,2880.09,0,275322
 07-09-2018,Friday,4998365304,None,None,0,0,275322
 08-09-2018,Saturday,4998365304,Debit,ATM,10000,0,265322
-08-09-2018,Saturday,4998365304,Debit,ATM,10000,0,255322
+08-09-2018,Saturday,4998365304,Debit,Travel,10000,0,255322
 08-09-2018,Saturday,4998365304,Debit,Shopping,3257,0,252065
 09-09-2018,Sunday,4998365304,None,None,0,0,252065
 10-09-2018,Monday,4998365304,Debit,Rent,20000,0,232065
@@ -98,7 +98,7 @@ Date,Day,Account_No,Type,Category,Debit Amount,Credit Amount,Closing Balance
 28-09-2018,Friday,4998365304,Credit,Interest,0,22.5,211847.01
 28-09-2018,Friday,4998365304,Credit,Salary,0,250254,462101.01
 28-09-2018,Friday,4998365304,Debit,Shopping,1869,0,460232.01
-29-09-2018,Saturday,4998365304,Debit,Shopping,1180,0,459052.01
+29-09-2018,Saturday,4998365304,Debit,Travel,1180,0,459052.01
 29-09-2018,Saturday,4998365304,Debit,Shopping,2108,0,456944.01
 29-09-2018,Saturday,4998365304,Debit,Shopping,202.19,0,456741.82
 29-09-2018,Saturday,4998365304,Debit,Shopping,202.19,0,456539.63
