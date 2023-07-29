@@ -6,6 +6,7 @@ date: 28-07-2023
 """
 
 import pandas as pd
+from riskanalysis import RiskAnalysis
 
 
 def read_datasets(path_acc, path_cust):
@@ -66,6 +67,21 @@ class Products:
         }
         return travel
 
+    def risk_related_products(self):
+        risk = {
+            "credit_risk": [
+                {
+                    "scheme": "expert advisory",
+                    "link": "https://www.fincart.com/financialplan.html"
+                },
+                {
+                    "scheme": "Term Plans",
+                    "link": "https://www.nidirect.gov.uk/articles/debt-management-plans"
+                }
+            ]
+        }
+        return risk
+
 
 class Offer:
     """
@@ -93,6 +109,15 @@ class Offer:
                 print(travel)
                 return travel
 
+    def check_risk_analysis(self, account_id):
+        ml = RiskAnalysis(account_id)
+        risk_check = ml.model_results()
+        if int(risk_check.iloc[0]) == 1:
+            risk = Products.risk_related_products(self)
+            return risk
+        else:
+            return "No Risk Detected"
+
 
 
 df, df1 = read_datasets('../dataset/account-statement.csv', '../dataset/Bank_Customer_Details.csv')
@@ -100,7 +125,7 @@ buckets = get_investment_categories(df)
 print(buckets)
 x = get_customer_details(df1, 4998365304)
 offer = Offer(x)
-print(offer.check_customer_preferences())
+print(offer.check_risk_analysis(4998365304))
 
 
 

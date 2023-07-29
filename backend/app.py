@@ -16,9 +16,12 @@ def cust_offers(cust_id):
     offer = Offer(cust_details)
     age_scheme = offer.check_age_offers()
     preference_scheme = offer.check_customer_preferences()
+    risk_scheme = offer.check_risk_analysis(cust_id)
     scheme = {}
     scheme.update(age_scheme)
     scheme.update(preference_scheme)
+    if risk_scheme != "No Risk Detected":
+        scheme.update(risk_scheme)
     return jsonify(scheme)
 
 

@@ -3,7 +3,7 @@ Account_No,Age,Gender,EducationLevel,Marital_Status,Account_Type,No_Of_Linked_Ac
 4998365301,49,Female,Graduate,Single,Savings,1,41,No,608,Less than 40K,2000000
 4998365302,51,Male,Graduate,Married,Savings,3,42,Yes,502,80K - 120K,2500000
 4998365303,40,Female,High School,,Savings,2,39,No,699,Less than 40K,5500000
-4998365304,40,Male,Graduate,Married,Savings,1,43,Yes,850,60K - 80K,6000000
+4998365304,40,Male,Graduate,Married,Savings,1,43,Yes,450,60K - 80K,6000000
 4998365305,44,Male,Graduate,Married,Savings,2,44,Yes,645,40K - 60K,6500000
 4998365306,51,Male,Unknown,Married,Salary,2,50,Yes,822,120K +,7000000
 4998365307,32,Male,High School,,Current,4,29,Yes,376,60K - 80K,7500000
