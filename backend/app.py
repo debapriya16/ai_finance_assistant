@@ -39,5 +39,17 @@ def cust_details(cust_id):
     return jsonify(cust_details.to_dict())
 
 
+@app.route('/offers/seasonal/<cust_id>', methods=['GET'])
+def cust_season_offers(cust_id):
+    df, df1 = read_datasets('../dataset/account-statement.csv', '../dataset/Bank_Customer_Details.csv')
+    date = df['Date'].values[-1:][0]
+    print(date)
+    df, df1 = read_datasets('../dataset/account-statement.csv', '../dataset/Bank_Customer_Details.csv')
+    cust_details = get_customer_details(df1, int(cust_id))
+    offer = Offer(cust_details)
+    season_scheme = offer.seasonal_offers(date)
+    return season_scheme
+
+
 if __name__ == "__main__":
     app.run(debug=True)

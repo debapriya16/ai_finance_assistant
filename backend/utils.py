@@ -82,6 +82,25 @@ class Products:
         }
         return risk
 
+    def winter_season_products(self):
+        season =  {
+            "season" : [
+                {
+                    "scheme" : "Heating Boiler",
+                    "link": "https://www.bosch-industrial.com/global/en/ocs/commercial-industrial/unimat-heating-boiler-ut-l-669463-p/"
+                },
+                {
+                    "scheme": "Heaters",
+                    "link": "https://www.nytimes.com/wirecutter/reviews/best-space-heaters/"
+                },
+                {
+                    "scheme": "Power Saving Tips",
+                    "link": "https://www.constellation.com/energy-101/energy-savings-tips/winter-energy-saving-tips.html"
+                }
+            ]
+        }
+        return season
+
 
 class Offer:
     """
@@ -117,6 +136,17 @@ class Offer:
             return risk
         else:
             return "No Risk Detected"
+
+    def seasonal_offers(self, date):
+        month = date.split("-")[1]
+        if int(month) >= 8:
+            season = Products.winter_season_products(self)
+            return season
+        else:
+            return "No Products suggested"
+
+
+
 
 
 
