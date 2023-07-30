@@ -38,7 +38,7 @@ class RiskAnalysis:
         self.df['Balance_Amount'].fillna(int(self.df['Balance_Amount'].mean()), inplace=True)
         self.df['Default'].fillna(int(self.df['Default'].mean()), inplace=True)
         # Dropping features which do not serve any purpose
-        self.df.drop(columns=['Has_Credit_Card', 'Gender', 'EducationLevel', 'Marital_Status', 'Account_Type',
+        self.df.drop(columns=['Has_Credit_Card', 'Gender', 'EducationLevel', 'Account_Type', "Has_Electoral_Roll",
                          'No_Of_Linked_Accounts'], axis=1, inplace=True)
         # Dependent and Independent Variables
         self.X = self.df.iloc[:, :-1]  # Independent
@@ -51,8 +51,7 @@ class RiskAnalysis:
 
         self.y_test = self.y.iloc[:2500]
         self.y_train = self.y.iloc[2500:]
-
-        self.index = np.where(self.X_test == 4998365304)[0][0]
+        self.index = np.where(self.X_test == int(self.customer))[0][0]
 
         return self.X, self.y, self.X_test, self.y_test, self.X_train, self.y_train, self.index
 

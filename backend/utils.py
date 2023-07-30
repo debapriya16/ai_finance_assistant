@@ -36,11 +36,13 @@ class Products:
         pass
 
     def show_pension_schemes(self):
-        name = "National Pension Plan"
-        min = 50
-        max = 5000
         pension = {
-            "pension": [{"plan": name, "minimum_deposit": min, "maximum_deposit": max}]
+            "pension": [
+                {
+                    "scheme": "National Pension Plan",
+                    "link": "https://www.moneyhelper.org.uk/en/pensions-and-retirement/pensions-basics/the-different-pensions-you-can-get-if-you-live-and-work-in-the-uk"
+                }
+            ]
         }
         return pension
 
@@ -109,6 +111,66 @@ class Products:
         }
         return season
 
+    def student_scheme(self):
+        student = {
+            "student": [
+                {
+                    "scheme": "Student Bank Account",
+                    "link": "https://www.natwest.com/current-accounts/student_account.html"
+                },
+                {
+                    "scheme": "Student Laptop Offer",
+                    "link" : "https://www.lenovo.com/in/en/d/students-offer"
+                }
+            ]
+        }
+        return student
+
+    def restaurant_schemes(self):
+        hotel = {
+            "hotel": [
+                {
+                    "scheme": "Restaurant Offers",
+                    "link": "https://www.tastecard.co.uk/dining-out"
+                },
+                {
+                    "scheme": "CashBack Offers",
+                    "link": "https://www.natwest.com/ukcashback1.html"
+                },
+                {
+                    "scheme": "Recipe Videos",
+                    "link": "https://www.youtube.com/watch?v=1HHfTZ9EpXw"
+                }
+            ]
+        }
+        return hotel
+
+    def electoral_roll_schemes(self):
+        elect = {
+            "elect": [
+                {
+                    "scheme": "Voting Benefits",
+                    "link": "https://www.derby.gov.uk/news/2022/march/voter-registration-benefits/"
+                }
+            ]
+        }
+        return elect
+
+    def entertainment_scheme(self):
+        entertain = {
+            "entertain": [
+                {
+                    "scheme": "Movie Tickets",
+                    "link": "https://in.bookmyshow.com/offers"
+                },
+                {
+                    "scheme": "Gaming",
+                    "link": "https://richardsonsfamilybowl.co.uk/offers/"
+                }
+            ]
+        }
+        return entertain
+
 
 class Offer:
     """
@@ -122,11 +184,11 @@ class Offer:
         if age >= 35:
             pension = Products.show_pension_schemes(self)
             return pension
-        if age >= 20 and age <= 60:
-            mortgage = Products.show_mortgage_schemes(self)
-            return mortgage
+        elif age >= 20 and age <= 25:
+            student = Products.student_scheme(self)
+            return student
 
-    def check_customer_preferences(self):
+    def check_customer_preferences(self, df):
         x = get_investment_categories(df)
         y = x.nlargest(2)
         d = y.to_dict()
@@ -139,6 +201,12 @@ class Offer:
             elif key == "Medical":
                 med = Products.healthcare_schemes(self)
                 scheme.update(med)
+            elif key == "Restaurant":
+                hotel = Products.restaurant_schemes(self)
+                scheme.update(hotel)
+            elif key == "Entertainment":
+                entertain = Products.entertainment_scheme(self)
+                scheme.update(entertain)
         return scheme
 
     def check_risk_analysis(self, account_id):
@@ -158,17 +226,23 @@ class Offer:
         else:
             return "No Products suggested"
 
+    def electoral_offers(self):
+        e_roll = self.customer["Has_Electoral_Roll"].values[0]
+        if e_roll == "No":
+            elect = Products.electoral_roll_schemes(self)
+            return elect
+        else:
+            return "No Voting Benefits found"
 
 
-
-
-
+"""
 df, df1 = read_datasets('../dataset/account-statement.csv', '../dataset/Bank_Customer_Details.csv')
 buckets = get_investment_categories(df)
 print(buckets)
 x = get_customer_details(df1, 4998365304)
 offer = Offer(x)
 print(offer.check_risk_analysis(4998365304))
+"""
 
 
 
