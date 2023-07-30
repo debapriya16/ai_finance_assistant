@@ -40,7 +40,7 @@ Account_No,Age,Gender,EducationLevel,Has_Electoral_Roll,Account_Type,No_Of_Linke
 4998365338,57,Female,Graduate,Yes,Savings,1,36,Yes,850,40K - 60K,5350718
 4998365339,66,Female,Doctorate,No,Savings,2,41,No,582,Unknown,5260618
 4998365340,45,Male,Graduate,Yes,Savings,1,40,Yes,472,80K - 120K,5147368
-2,21,Male,College,No,Savings,1,51,No,465,40K - 60K,5134868
+2,21,Male,Student,No,Savings,1,51,No,465,40K - 60K,5134868
 4998365342,50,Female,College,Yes,Current,1,61,Yes,556,40K - 60K,5094868
 4998365343,49,Male,High School,No,Savings,1,49,No,834,60K - 80K,4887968
 4998365344,38,Female,Graduate,Yes,Savings,1,61,Yes,660,Unknown,4611968
