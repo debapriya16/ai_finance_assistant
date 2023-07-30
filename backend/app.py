@@ -32,6 +32,14 @@ def cust_transaction_categories(cust_id):
     return jsonify(buckets.to_dict())
 
 
+@app.route('/transaction/amount/<cust_id>', methods=['GET'])
+def cust_transaction_sum(cust_id):
+    df, df1 = read_datasets('../dataset/account-statement.csv', '../dataset/Bank_Customer_Details.csv')
+    # Use GroupBy() & compute sum on specific column
+    buckets = df.groupby('Category')['Debit_Amount'].sum()
+    return jsonify(buckets.to_dict())
+
+
 @app.route('/customer/<cust_id>', methods=['GET'])
 def cust_details(cust_id):
     df, df1 = read_datasets('../dataset/account-statement.csv', '../dataset/Bank_Customer_Details.csv')

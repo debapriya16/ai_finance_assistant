@@ -44,9 +44,17 @@ class Products:
         }
         return pension
 
-    def show_mortgage_schemes(self):
-        mortgage = {"plan": "Mortgage Scheme"}
-        return mortgage
+
+    def healthcare_schemes(self):
+        healthcare = {
+            "healthcare": [
+                {
+                    "scheme": "Health insurance",
+                    "link": "https://www.icicilombard.com/health-insurance/health-advantedge-insurance-for-family"
+                }
+            ]
+        }
+        return healthcare
 
     def travel_offers(self):
         travel = {
@@ -122,11 +130,16 @@ class Offer:
         x = get_investment_categories(df)
         y = x.nlargest(2)
         d = y.to_dict()
+        scheme = {}
         for key in d:
             if key == "Travel":
                 travel = Products.travel_offers(self)
                 print(travel)
-                return travel
+                scheme.update(travel)
+            elif key == "Medical":
+                med = Products.healthcare_schemes(self)
+                scheme.update(med)
+        return scheme
 
     def check_risk_analysis(self, account_id):
         ml = RiskAnalysis(account_id)
