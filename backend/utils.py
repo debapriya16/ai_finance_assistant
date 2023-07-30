@@ -46,7 +46,6 @@ class Products:
         }
         return pension
 
-
     def healthcare_schemes(self):
         healthcare = {
             "healthcare": [
@@ -233,16 +232,6 @@ class Offer:
             return elect
         else:
             return "No Voting Benefits found"
-
-
-"""
-df, df1 = read_datasets('../dataset/account-statement.csv', '../dataset/Bank_Customer_Details.csv')
-buckets = get_investment_categories(df)
-print(buckets)
-x = get_customer_details(df1, 4998365304)
-offer = Offer(x)
-print(offer.check_risk_analysis(4998365304))
-"""
 
 
 
